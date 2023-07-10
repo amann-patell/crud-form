@@ -1,6 +1,6 @@
 <?php
-    session_start();
-    require 'dbcon.php';
+session_start();
+require 'dbcon.php';
 ?>
 
 <!doctype html>
@@ -24,7 +24,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>Student Details
-                            <a href="student-create.php" class="btn btn-primary float-end">Add Student</a>
+                            <a href="student-create.php" class="btn btn-secondary float-end">Logout</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -40,38 +40,34 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php
+                                <?php
                                 $query = "SELECT * FROM students";
-                                $query_run = mysqli_query($con,$query);
+                                $query_run = mysqli_query($con, $query);
 
-                                if(mysqli_num_rows($query_run) > 0)
-                                {
-                                   foreach ($query_run as $student)
-                                   {
-                                       ?>
-                                       <tr>
-                                           <td><?=$student['id'];?></td>
-                                           <td><?=$student['name'];?></td>
-                                           <td><?=$student['email'];?></td>
-                                           <td><?=$student['phone'];?></td>
-                                           <td><?=$student['course'];?></td>
-                                           <td>
-                                               <a href="student-view.php?id=<?= $student['id']; ?>" class="btn btn-secondary btn-sm">View</a>
-                                               <a href="student-edit.php?id=<?= $student['id']; ?>" class="btn btn-success btn-sm">Edit</a>
-                                               <form action="code.php" method="post" class="d-inline">
-                                                   <button type="submit" name="delete_student" value="<?= $student['id']; ?>" class="btn btn-danger btn-sm">Delete</button>
-                                               </form>
-                                           </td>
+                                if (mysqli_num_rows($query_run) > 0) {
+                                    foreach ($query_run as $student) {
+                                ?>
+                                        <tr>
+                                            <td><?= $student['id']; ?></td>
+                                            <td><?= $student['name']; ?></td>
+                                            <td><?= $student['email']; ?></td>
+                                            <td><?= $student['phone']; ?></td>
+                                            <td><?= $student['course']; ?></td>
+                                            <td>
+                                                <a href="student-view.php?id=<?= $student['id']; ?>" class="btn btn-primary btn-sm">View</a>
+                                                <a href="student-edit.php?id=<?= $student['id']; ?>" class="btn btn-success btn-sm">Edit</a>
+                                                <form action="code.php" method="post" class="d-inline">
+                                                    <button type="submit" name="delete_student" value="<?= $student['id']; ?>" class="btn btn-danger btn-sm">Delete</button>
+                                                </form>
+                                            </td>
 
-                                       </tr>
-                            <?php
-                                   }
-                                }
-                                else
-                                {
+                                        </tr>
+                                <?php
+                                    }
+                                } else {
                                     echo "<h5> No Record Found </h5>";
                                 }
-                            ?>
+                                ?>
 
                             </tbody>
                         </table>

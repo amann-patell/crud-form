@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Student Create</title>
+    <title>Register Student</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 
@@ -20,7 +20,7 @@ session_start();
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Add Student
+                        <h4>Register Student
                             <a href="login.php" class="btn btn-primary float-end">Login</a>
                         </h4>
                     </div>
@@ -29,22 +29,22 @@ session_start();
 
                             <div class="mb-3">
                                 <label>Student Name</label>
-                                <input type="text" name="name" class="form-control">
+                                <input type="text" name="name" class="form-control" required autocomplete="off">
                             </div>
 
                             <div class="mb-3">
                                 <label>Student Email</label>
-                                <input type="email" name="email" class="form-control">
+                                <input type="email" name="email" class="form-control" required autocomplete="off">
                             </div>
 
                             <div class="mb-3">
                                 <label>Student Phone</label>
-                                <input type="tel" name="phone" class="form-control">
+                                <input type="tel" name="phone" class="form-control" required autocomplete="off">
                             </div>
 
                             <div class="mb-3">
                                 <label>Student Course</label>
-                                <input type="text" name="course" class="form-control">
+                                <input type="text" name="course" class="form-control" required autocomplete="off">
                             </div>
 
                             <div class="mb-3">

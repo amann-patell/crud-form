@@ -34,8 +34,8 @@ if ($userprofile == true) {
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Student Details
-                            <a href="student-create.php" class="btn btn-secondary float-end">Logout</a>
+                        <h4>Student Records
+                            <a href="logout.php" class="btn btn-secondary float-end">Logout</a>
                         </h4>
                     </div>
                     <div class="card-body">

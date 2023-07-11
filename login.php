@@ -25,11 +25,13 @@ require 'code.php';
         <div class="form">
             <form action="" method="POST">
 
-                <input type="text" name="username" class="textfield" placeholder="Username">
+                <input type="text" name="username" class="textfield" placeholder="Username" required autocomplete="off">
 
-                <input type="password" name="password" class="textfield" placeholder="Password">
+                <input type="password" name="password" class="textfield" placeholder="Password" required>
 
                 <input type="submit" name="login" value="Login" class="btn">
+
+                <a href="student-create.php">Register</a>
 
             </form>
         </div>

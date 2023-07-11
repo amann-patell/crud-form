@@ -9,10 +9,12 @@ if (isset($_POST['login'])) {
 
     if ($username == 'root' && $password == 'password') {
         $_SESSION['message'] = "Login Successfull!";
+        $_SESSION['user_name'] = $username;
         header("Location: index.php");
         exit(0);
     } else {
         $_SESSION['message'] = "Wrong Credentials!";
+        // $_SESSION['user_name'] = $username;
         header("Location: login.php");
         exit(0);
     }

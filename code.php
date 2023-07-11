@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 require 'dbcon.php';
 
@@ -7,9 +6,16 @@ require 'dbcon.php';
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    if ($username == 'root' && $password == 'password')
+
+    if ($username == 'root' && $password == 'password') {
+        $_SESSION['message'] = "Login Successfull!";
         header("Location: index.php");
-    $_SESSION['message'] = "Login Successfull!";
+        exit(0);
+    } else {
+        $_SESSION['message'] = "Wrong Credentials!";
+        header("Location: login.php");
+        exit(0);
+    }
 }
 
 // Delete Button Code
